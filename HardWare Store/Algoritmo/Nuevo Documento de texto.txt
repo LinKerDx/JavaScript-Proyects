@@ -1,0 +1,3 @@
+haré un landing page normal con un botón que muestre el menú, que sea desplegable y que muestre los items 
+hacer que la ubicación muestre un enlace a la ubicación de la ferretera 
+tenga un elemento de búsqueda y que contenga filtros para mejorar su búsqueda
