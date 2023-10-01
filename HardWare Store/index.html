@@ -6,21 +6,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="normalize.css">
+    <script src="https://kit.fontawesome.com/b7371cb396.js" crossorigin="anonymous"></script>
+
     <title>HardwareStore</title>
 </head>
+
 <body>
     <div class="div-container">
         <div class="Header">
             <div class="icon_img"></div>
-            <input type="text" placeholder="search" class="">
-            <a href="Log_In.html">Log in</a>
-            <button class="sign_Up">Sign up for free</button>
-        </div>
-        <div class="Main"></div>
-        <div class="Side"></div>
-        <div class="Footer"></div>
+            <div class="searchContainer">
+                <select name="filterSelector" id="selectfirst" class="selectorFilter" title="options">
+                    <option value="All Categories">All Categories</option>
+                    <option value="Tools">Tools</option>
+                    <option value="Machines">Machines</option>
+                    <option value="Personal protective equipment">Personal protective equipment</option>
+                    <option value="Cleaning tools">Cleaning tools</option>
+                    <option value="Welding">Welding</option>
+                    <option value="Paint">Paint</option>
+                    <option value="Plumbing">Plumbing</option>
+                    <option value="Cargo handling">Cargo handling</option>
+                    <option value="Screw and fasteners">Screw and fasteners</option>
+                </select>
+                <input type="text" placeholder="search" class="inputSearch">
+                <input type="submit" class="inputSubmit">
 
+            </div>
+            <a href="Log_In.html" class="logIn" target="_blank">Log in</a>
+            <button class="button"><span>Sign up for free </span></button>
+
+            <div class="button-belt">
+                <i class="fa-solid fa-bars barButton1"> </i><a href="#" class="menu">MENÚ</a>
+                <a href="#">FACTURACIÓN</a>
+                <a href="#">MARCAS</a>
+                <a href="#">SUCURSALES</a>
+                <a href="#">AYUDA</a>
+
+            </div>
+        </div>
+        <div class="Main">
+            <div class="photoBackground"></div>
+            <div class="mainContent"></div>
+        </div>
+        <div class="Side" hidden>
+            <div class="marcaBoton">
+                <div class="buttonsDiv"><i class="fa-solid fa-bars barButton2"> </i><a href="#" class="menu2">MENÚ</a></div>
+                <div class="icon_img"></div>
+            </div>
+            <div class="divMaquinaria">
+                <h4>Maquinaria</h4>
+                <button class="btnRass">Material</button>
+                <button class="btnRass">Material</button>
+                <button class="btnRass">Material</button>
+                <button class="btnRass">Material</button>
+            </div>
+            <div class="divHerramientas">
+                <h4>Herramientas</h4>
+                <button class="btnRass">Material</button>
+                <button class="btnRass">Material</button>
+                <button class="btnRass">Material</button>
+                <button class="btnRass">Material</button>
+            </div>
+            <div class="divTornillería">
+                <h4>Tornillería</h4>
+                <button class="btnRass">Material</button>
+                <button class="btnRass">Material</button>
+                <button class="btnRass">Material</button>
+                <button class="btnRass">Material</button>
+            </div>
+            
+            <div class="divLiquidos">
+                <h4>Líquidos</h4>
+                <button class="btnRass">Solventes</button>
+                <button class="btnRass">Pinturas</button>
+                <button class="btnRass">Hipermeabilizantes</button>
+            </div>
+        </div>
+        <div class="Footer">
+            <div class="infoFooter">
+                <h3>Información</h3>
+                <a href="">Ubicación</a><br>
+                <a href="">Guías</a><br>
+                <a href="">Muestras</a><br>
+                <a href="">Cotizaciones</a>
+            </div>
+            <div class="infoFooter">
+                <h3>Redes Sociales</h3>
+                <a href="">Facebook</a><br>
+                <a href="">Instagram</a><br>
+                <a href="">TikTok</a><br>
+                <a href="">X</a>
+
+            </div>
+            <div class="infoFooter">
+                <h3>Ayuda</h3>
+                <a href="">Contáctanos</a><br>
+                <a href="">Términos y condiciones</a><br>
+                <a href="">Política de privacidad</a>
+
+
+            </div>
+            <div class="infoFooterImg"></div>
+        </div>
     </div>
+
+    <script src="codigo.js"></script>
 </body>
 
 </html>
