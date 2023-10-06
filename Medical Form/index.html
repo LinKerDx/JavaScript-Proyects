@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Medical Form</title>
+</head>
+
+<body>
+
+    <form action="guardar_historial.php" method="POST">
+        <!-- Datos del paciente -->
+        <div class="divInfo">
+            <h2>Datos del Paciente</h2>
+            <label for="nombre" class="Datos">Nombre:</label>
+            <input type="text" class="Datos" id="nombre" name="nombre" required>
+
+            <label for="apellido" class="Datos">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required><br>
+            <label for="direccion" class="Datos">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" class="Datos"><br>
+
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
+
+            <label for="genero" class="Datos">Género:</label>
+            <select id="genero" name="genero" class="Datos" required>
+                <option value="otro">Especificar</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </select><br><br>
+
+        </div>
+        <div class="divInfoMed">
+
+            <!-- Información médica -->
+            <h2>Información Médica</h2>
+            <label for="diagnostico">Diagnóstico:</label>
+            <textarea id="diagnostico" name="diagnostico" rows="4" cols="50" required></textarea><br>
+
+            <label for="tratamiento">Tratamiento:</label>
+            <textarea id="tratamiento" name="tratamiento" rows="4" cols="50" required></textarea><br>
+
+            <label for="notas">Notas del Médico:</label>
+            <textarea id="notas" name="notas" rows="4" cols="50"></textarea><br>
+
+            <!-- Botón de envío -->
+            <input type="submit" value="Guardar Historial Médico">
+        </div>
+        <script src="codigo.js"></script>
+    </form>
+</body>
+
+</html>
