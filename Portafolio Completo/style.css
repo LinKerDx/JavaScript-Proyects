@@ -1,38 +1,491 @@
-body{
+body {
     width: 100%;
-    height: 200vh;
+    height: 400vh;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 40px 1fr 1fr 1fr 1fr 1fr 40px;
+    grid-template-rows: 40px 1fr 1fr 1fr 1fr 1fr 500px;
     color: rgb(255, 255, 255);
-
+    background-image: url("backgroundBlue.jpg");
+    background-size: cover;
+    justify-items: center;
+    }
+section{
+    width: 600px;
+    align-self: center;
+    justify-self: center;
 }
-.Header{
+h1 {
+    font-family: 'Roboto Mono', monospace;
+    color: #af63ff;
+}
+h4{
+    color: #ffffff;
+}
+p {
+    font-family: 'Chakra Petch', sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.Header {
     background-color: rgb(0, 0, 0);
     grid-row: 1/2;
     grid-column: 1/6;
+    position: sticky;
+    top: 0%;
+    width: 600px;
+    z-index: 99;
+
 }
 
-.HeaderButtons{
+.HeaderButtons {
     display: grid;
-    place-content: end;
-    margin: 10px 10px
+    grid-template-columns: 200px 350px;
+    place-items: end;
+    margin: 10px 10px;
+    
 }
-a{
+.divLinks{
+    grid-column: 1/2;
+}
+.divaLogos{
+    grid-column: 2/3;
+}
+a {
     padding-left: 15px;
     text-decoration: none;
-    color: rgb(235, 246, 255);
+    color: rgb(255, 255, 255);
 }
-.Main{
-    background-image: url("backgroundBlue.jpg") ;
-    background-size: cover;
+
+.Main {
+    background: none;
     grid-row: 2/7;
     grid-column: 1/6;
+    margin: 0;
+}
+.photo{
+    width: 300px;
+    height: 300px;
+    background-image: url("foto.png");
+    background-size: cover;
+}
+.divSamples{
+    height: 300px;
+    text-align: center;
+    font-size: 30px;
+}
+.linklogos{
+    display: grid;
+    place-content: end;
+    margin: 10px 10px;
+    padding: 15px;
 
 }
-.Footer{
-    background-color:#021551;
+.Samples {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(4, 300px);
+    height: 50%;
+    place-items: center;
+}
+
+.tecnologies{
+    display: grid;
+    place-items: center;
+}
+
+.tecnoLogos{
+    margin: 20px;
+    padding: 50px;
+}
+
+.tecnoLogos:hover{
+    transform: scale(2.5);
+    cursor: pointer;
+    transition: 1s;
+
+}
+.biography{
+    height: 700px;
+    display: grid;
+    place-items: center;
+}
+
+.divSample {
+    width: 500px;
+    height: 70%;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+.divSample:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+    transition: 1s;
+
+}
+
+.steelCalculator {
+    background-image: url("steelCalc.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.medicalForm {
+    background-image: url("recetaMed.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-row: 1/2;
+    grid-column: 2/3;
+}
+
+.subscription {
+    background-image: url("Subscription.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+.loginForm {
+    background-image: url("login.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+
+
+.Footer {
+    background: none;
     grid-row: 7/8;
     grid-column: 1/6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 5px solid rgb(255, 255, 255);
+}
 
+.div_containerFormsResponsive {
+    display: none;
+}
+
+.div_containerForms {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr 80px;
+    grid-template-rows: repeat(4, 1fr);
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.div_contactUs {
+    grid-column: 2/3;
+    grid-row: 2/4;
+    padding: 10px;
+}
+
+.imagens {
+    color: rgb(255, 255, 255);
+    padding-top: 10px;
+}
+
+.form_container {
+    grid-column: 3/4;
+    grid-row: 2/4;
+    padding: 10px;
+
+}
+
+.inputInfo {
+    width: 100%;
+    border-radius: 5px;
+}
+
+input {
+    background: transparent;
+    padding: 10px;
+}
+
+.textTarea {
+    border-radius: 5px;
+    width: 100%;
+    min-width: 1fr;
+    max-width: 1fr;
+    min-height: 1fr;
+    max-height: 1fr;
+    resize: none;
+    background: transparent;
+    padding: 10px;
+
+}
+
+input::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+textarea::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+.btnSend {
+    padding: 5px;
+    font-size: 16px;
+    width: 150px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}
+
+.form_containerBtn {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+@media screen and(max-width: 600px) {
+    body {
+        width: 100%;
+        height: 400vh;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 40px 1fr 1fr 1fr 1fr 1fr 500px;
+        color: rgb(255, 255, 255);
+        background-image: url("backgroundBlue.jpg");
+        background-size: cover;
+        justify-items: center;
+        }
+    section{
+        align-self: center;
+        justify-self: center;
+    }
+    h1 {
+        font-family: 'Roboto Mono', monospace;
+        color: #af63ff;
+    }
+    h4{
+        color: #ffffff;
+    }
+    p {
+        font-family: 'Chakra Petch', sans-serif;
+        color: rgb(255, 255, 255);
+    }
+    
+    .Header {
+        background-color: rgb(0, 0, 0);
+        grid-row: 1/2;
+        grid-column: 1/6;
+        position: sticky;
+        top: 0%;
+    
+    }
+    
+    .HeaderButtons {
+        display: grid;
+        grid-template-columns: 200px 400px;
+        place-items: end;
+        margin: 10px 10px;
+    }
+    .divLinks{
+        grid-column: 1/2;
+    }
+    .divaLogos{
+        grid-column: 2/3;
+    }
+    a {
+        padding-left: 15px;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+    
+    .Main {
+        background: none;
+        grid-row: 2/7;
+        grid-column: 1/6;
+        margin: 30px;
+    }
+    .photo{
+        width: 300px;
+        height: 300px;
+        background-image: url("foto.png");
+        background-size: cover;
+    }
+    .divSamples{
+        height: 300px;
+        text-align: center;
+        font-size: 30px;
+    }
+    .linklogos{
+        display: grid;
+        place-content: end;
+        margin: 10px 10px;
+        padding: 15px;
+    
+    }
+    .Samples {
+        display: grid;
+        grid-template-columns: 1fr; 
+        grid-template-rows: repeat(4, 300px);
+        height: 50%;
+        place-items: center;
+    }
+    
+    .tecnologies{
+        display: grid;
+        place-items: center;
+    }
+    
+    .tecnoLogos{
+        margin: 20px;
+        padding: 50px;
+    }
+    
+    .tecnoLogos:hover{
+        transform: scale(2.5);
+        cursor: pointer;
+        transition: 1s;
+    
+    }
+    .biography{
+        height: 700px;
+        display: grid;
+        place-items: center;
+    }
+    
+    .divSample {
+        width: 500px;
+        height: 70%;
+        border: 5px solid black;
+        border-radius: 10px;
+    }
+    
+    .divSample:hover {
+        transform: scale(0.9);
+        cursor: pointer;
+        transition: 1s;
+    
+    }
+    
+    .steelCalculator {
+        background-image: url("steelCalc.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+    
+    .medicalForm {
+        background-image: url("recetaMed.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+    
+    .subscription {
+        background-image: url("Subscription.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+    
+    .loginForm {
+        background-image: url("login.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+    
+    
+    
+    .Footer {
+        background: none;
+        grid-row: 7/8;
+        grid-column: 1/6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 5px solid rgb(255, 255, 255);
+    }
+    
+    .div_containerFormsResponsive {
+        display: none;
+    }
+    
+    .div_containerForms {
+        display: grid;
+        grid-template-columns: 80px 1fr 1fr 80px;
+        grid-template-rows: repeat(4, 1fr);
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column
+    }
+    
+    .div_contactUs {
+        grid-column: 2/3;
+        grid-row: 2/4;
+        padding: 10px;
+    }
+    
+    .imagens {
+        color: rgb(255, 255, 255);
+        padding-top: 10px;
+    }
+    
+    .form_container {
+        grid-column: 3/4;
+        grid-row: 2/4;
+        padding: 10px;
+    
+    }
+    
+    .inputInfo {
+        width: 100%;
+        border-radius: 5px;
+    }
+    
+    input {
+        background: transparent;
+        padding: 10px;
+    }
+    
+    .textTarea {
+        border-radius: 5px;
+        width: 100%;
+        min-width: 1fr;
+        max-width: 1fr;
+        min-height: 1fr;
+        max-height: 1fr;
+        resize: none;
+        background: transparent;
+        padding: 10px;
+    
+    }
+    
+    input::placeholder {
+        color: rgb(255, 255, 255);
+    }
+    
+    textarea::placeholder {
+        color: rgb(255, 255, 255);
+    }
+    
+    .btnSend {
+        padding: 5px;
+        font-size: 16px;
+        width: 150px;
+        border-radius: 5px;
+        color: rgb(0, 0, 0);
+    }
+    
+    .form_containerBtn {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
 }

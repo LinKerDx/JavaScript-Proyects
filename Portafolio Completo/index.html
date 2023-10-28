@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="normalize.css">
     <script src="https://kit.fontawesome.com/b7371cb396.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto+Mono:wght@300&display=swap"
+        rel="stylesheet">
 
     <title>Portfolio</title>
 </head>
@@ -15,35 +19,104 @@
 
     <div class="Header">
         <div class="HeaderButtons">
-            <section>
-                <a href="index.html">Inicio</a><a href="">Proyectos</a><a href="">Tecnologías</a>
-            </section>
+                <div class="divLinks"><a href="index.html">Home</a><a href="">Proyects</a><a href="">Tecnologies</a></div>
+                <div class="divaLogos">
+                        <a href="https://www.instagram.com/monsivais_omar/" class="aLogos" title="insta" target="_blank" rel="noopener"><i
+                            class="fa-brands fa-instagram fa-xl"></i></a>
+                    <a href="https://www.linkedin.com/in/linkdx/" class="aLogos" title="insta" target="_blank" rel="noopener"><i
+                            class="fa-brands fa-linkedin fa-xl"></i></i></a>
+                    <a href="https://github.com/LinKerDx" class="aLogos" title="insta" target="_blank" rel="noopener"><i
+                            class="fa-brands fa-github fa-xl"></i></a>
+                        </div>
         </div>
     </div>
     <div class="Main">
+        <section class="biography">
         <h1>My name is Omar Monsivais</h1>
-        <h5>Software Engineer and Front-end Developer</h5>
-        <p>A passionate software developer specialized on front-end, focused in find a perfect combination between efficiency and quality.</p>
-        <p>Contact me by clicking on these</p>
-        <a href="https://www.instagram.com/monsivais_omar/" title="insta" target="_blank" rel="noopener"><i
-                class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/linkdx/" title="insta" target="_blank" rel="noopener"><i
-                class="fa-brands fa-linkedin"></i></i></a>
+        <div class="photo"></div>
+        <h1>Software Engineer and Front-end Developer</h1>
+        <p>A passionate software developer specialized on front-end, focused in find a perfect combination between
+            efficiency and quality. My projects have helped people to improve their work.</p>
+    </section>
+    <h1>Proyects</h1>
 
-        <a href="https://github.com/LinKerDx" title="insta" target="_blank" rel="noopener"><i
-                class="fa-brands fa-github"></i>
-        </a>
-        <h1>Proyects</h1>
-        <section>
+        <section class="Samples">
+            <div class="divSamples">
+                <h4>Steel Calculator</h4>
+            <div class="steelCalculator divSample"></div>
+            </div>
+            <div class="divSamples">
+                <h4>Medical Form</h4>
+            <div class="medicalForm divSample"></div>
+            </div>
+            <div class="divSamples">
+                <h4>Subscription Plan</h4>
+                <div class="subscription divSample"></div>
+            </div>
+            <div class="divSamples">
+                <h4>Login Form</h4>
+                <div class="loginForm divSample"></div>
+            </div>
 
-            <div class="steelCalculator"></div>
-            
+        </section>
+
+        <section class="tecnologies">
+            <h1>Tecnologies</h1>
+            <div class="divTecno">
+                <i class="fa-brands fa-css3-alt fa-2xl tecnoLogos" ></i>
+                <i class="fa-brands fa-square-js fa-2xl tecnoLogos" ></i>
+                <i class="fa-brands fa-github fa-2xl tecnoLogos" ></i></a>
+            </div>
         </section>
 
     </div>
-    <div class="Footer"></div>
+    <div class="Footer">
+        <div class="div_containerForms">
+            <div class="div_contactUs">
+                <h1>Contact Us</h1>
+                <p>Any doubts, use this way to leave us a message or check out the next info, contact us how ur prefer
+                </p>
+                <i class="fa-solid fa-phone imagens"></i>8115070493</br>
+                <i class="fa-solid fa-envelope imagens"></i>omar@softlinkdx.com</br>
+                <i class="fa-solid fa-location-dot imagens"></i>SAN NICOLÁS DE LOS GARZA, NUEVO LEÓN, MÉXICO
+            </div>
+            <div class="form_container">
+                <input type="text" placeholder="Name" class="inputInfo">
+                <input type="text" placeholder="Phone" class="inputInfo">
+                <input type="text" placeholder="Email" class="inputInfo">
+                <textarea name="message_Box" class="textTarea" id="message_Box" cols="30" rows="10"
+                    placeholder="Message"></textarea>
+                <div class="form_containerBtn">
+                    <button type="submit" class="btnSend">SEND</button>
+                </div>
 
+            </div>
+        </div>
 
+        <div class="div_containerFormsResponsive">
+            <div class="div_contactUsResponsive">
+                <h1>Contact Us</h1>
+                <p>Any doubts, use this way to leave us a message or check out the next info, contact us how ur prefer
+                </p>
+                <i class="fa-solid fa-phone imagensResponsive">8115070493</i></br>
+                <i class="fa-solid fa-envelope imagensResponsive">persona@ejemplo.com</i></br>
+                <i class="fa-solid fa-location-dot imagensResponsive">SAN NICOLÁS DE LOS GARZA, NUEVO LEÓN, MEXICO</i>
+            </div>
+            <div class="form_containerResponsive">
+                <input type="text" placeholder="Name" class="inputInfoResponsive">
+                <input type="text" placeholder="Phone" class="inputInfoResponsive">
+                <input type="text" placeholder="Email" class="inputInfoResponsive">
+                <textarea name="message_BoxResponsive" class="textTareaResponsive" id="message_BoxResponsive" cols="30"
+                    rows="10" placeholder="Message"></textarea>
+                <div class="form_containerBtnResponsive">
+                    <button type="submit" class="btnSendResponsive">SEND</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="code.js"></script>
 </body>
 
 </html>
