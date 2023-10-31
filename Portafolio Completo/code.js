@@ -7,12 +7,12 @@ let login = document.querySelector(".loginForm");
 
 
 calc.addEventListener("click", function calcPressed() {
-    let url = "http://calmat.online/" 
+    let url = "https://calmat.online/" 
     window.open(url, '_blank');
 });
 
 med.addEventListener("click", function medPressed() {
-    let url = "https://softlinkdx.com/medicalForm/index.html" 
+    let url = "medprospect.online" 
     window.open(url, '_blank');
 });
 
