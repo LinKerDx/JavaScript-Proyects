@@ -228,6 +228,7 @@ a {
 input {
     background: transparent;
     padding: 10px;
+    color: #ffffff;
 }
 
 .textTarea {
@@ -240,6 +241,7 @@ input {
     resize: none;
     background: transparent;
     padding: 10px;
+    color: #ffffff;
 
 }
 
@@ -265,10 +267,10 @@ textarea::placeholder {
     align-content: center;
 }
 
-@media screen and(max-width: 600px) {
+@media only screen and (max-width: 600px) {
     body {
         width: 100%;
-        height: 500vh;
+        height: 470vh;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: 40px 1fr 1fr 1fr 1fr 1fr 780px;
@@ -285,6 +287,7 @@ textarea::placeholder {
     h1 {
         font-family: 'Roboto Mono', monospace;
         color: #af63ff;
+        text-align: center;
     }
     h4{
         color: #ffffff;
@@ -293,7 +296,6 @@ textarea::placeholder {
         font-family: 'Chakra Petch', sans-serif;
         color: rgb(255, 255, 255);
         font-size: 30px;
-        text-align: justify;
     }
     
     .Header {
@@ -353,7 +355,7 @@ textarea::placeholder {
     .Samples {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 35px 290px 290px 290px 290px ;
+        grid-template-rows: 35px 580px 580px 580px 580px ;
     
     
     }
@@ -384,7 +386,7 @@ textarea::placeholder {
     
     .tecnoLogos{
         margin: 20px;
-        padding: 50px;
+        padding: 25px;
         
     }
     
@@ -406,7 +408,7 @@ textarea::placeholder {
     
     .divSample {
         width: 250px;
-        height: 250px;
+        height: 120px;
         border: 5px solid black;
         border-radius: 10px;
     }
@@ -461,7 +463,7 @@ textarea::placeholder {
     
     .div_containerForms {
         display: grid;
-        grid-template-columns: 80px 1fr 1fr 80px;
+        grid-template-columns: 40px 1fr 1fr 40px;
         grid-template-rows: repeat(4, 1fr);
         height: 100%;
         justify-content: center;
@@ -495,6 +497,8 @@ textarea::placeholder {
     input {
         background: transparent;
         padding: 10px;
+        color: #ffffff;
+
     }
     
     .textTarea {
@@ -507,7 +511,7 @@ textarea::placeholder {
         resize: none;
         background: transparent;
         padding: 10px;
-    
+        color: #ffffff;
     }
     
     input::placeholder {
