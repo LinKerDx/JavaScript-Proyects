@@ -40,23 +40,17 @@ function clickImg(e) {
         calculatePTR.removeAttribute("hidden");
         calculatePlate.setAttribute("hidden", calculatePlate.getAttribute("hidden"));
         calculateRoundBar.setAttribute("hidden", calculateRoundBar.getAttribute("hidden"));
-        let material = "PTR";
-        return material;
 
     }
     else if (e.target == Plate) {
         calculatePlate.removeAttribute("hidden");
         calculatePTR.setAttribute("hidden", calculatePTR.getAttribute("hidden"));
         calculateRoundBar.setAttribute("hidden", calculateRoundBar.getAttribute("hidden"));
-        let material = "Plate";
-        return material;
     } 
     else if(e.target == RoundBar){
         calculateRoundBar.removeAttribute("hidden");
         calculatePTR.setAttribute("hidden", calculatePTR.getAttribute("hidden"));
         calculatePlate.setAttribute("hidden", calculatePlate.getAttribute("hidden"));
-        let material = "Round Bar";
-        return material;
     }
     
 

@@ -1,6 +1,6 @@
 body {
     width: 100%;
-    height: 500vh;
+    height: 550vh;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 40px 1fr 1fr 1fr 1fr 1fr 780px;
@@ -8,24 +8,28 @@ body {
     background-image: url("backgroundBlue.jpg");
     background-size: cover;
     justify-items: center;
-    }
-section{
+}
+
+section {
     align-self: center;
     justify-self: center;
     width: 900px;
 }
+
 h1 {
     font-family: 'Roboto Mono', monospace;
     color: #af63ff;
 }
-h4{
-    color: #ffffff;
+
+h4 {
+    color: #af63ff;
 }
+
 p {
     font-family: 'Chakra Petch', sans-serif;
     color: rgb(255, 255, 255);
     font-size: 30px;
-    text-align: justify;
+    text-align: left;
 }
 
 .Header {
@@ -41,16 +45,18 @@ p {
 .HeaderButtons {
     display: grid;
     grid-template-columns: 1fr 1fr 160px;
-    
+
     margin: 10px 10px;
-    
+
 }
-.divLinks{
+
+.divLinks {
     place-items: start;
     grid-column: 1/2;
 
 }
-.divaLogos{
+
+.divaLogos {
     grid-column: 3/4;
     align-items: center;
     justify-items: center;
@@ -74,32 +80,47 @@ a {
     place-items: center;
 
 }
-.Proy{
+
+.Proy {
     text-align: center;
 }
-.photo{
+
+.photo {
     width: 300px;
     height: 300px;
     background-image: url("foto.png");
     background-size: cover;
 }
+
 .Samples {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 70px 580px 580px 580px 580px ;
+    grid-template-rows: 110px 650px 650px 650px 650px;
 
 
 }
 
-.divSamples{
-    height: 580px;
+.divSamples {
+    height: 550px;
     font-size: 30px;
     display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 450px;
     place-items: center;
+    border: #ffffff solid 7px;
+    padding: 21px;
+}
+
+.css{
+    color: #2549E6;
+
+}
+.js{
+    color: #F5DD1B;
 
 }
 
-.linklogos{
+.linklogos {
     display: grid;
     place-content: end;
     margin: 10px 10px;
@@ -107,7 +128,7 @@ a {
 
 }
 
-.tecnologies{
+.tecnologies {
     display: grid;
     place-items: center;
     grid-column: 1/2;
@@ -115,19 +136,20 @@ a {
 
 }
 
-.tecnoLogos{
+.tecnoLogos {
     margin: 20px;
     padding: 50px;
-    
+
 }
 
-.tecnoLogos:hover{
-    transform: scale(2.5);
+.tecnoLogos:hover {
+    transform: scale(2.2);
     cursor: pointer;
     transition: 1s;
 
 }
-.biography{
+
+.biography {
     height: 700px;
     display: grid;
     place-items: center;
@@ -135,13 +157,12 @@ a {
     grid-column: 1/2;
 }
 
-
-
 .divSample {
-    width: 500px;
+    width: 600px;
     height: 250px;
     border: 5px solid black;
     border-radius: 10px;
+
 }
 
 .divSample:hover {
@@ -175,7 +196,12 @@ a {
     background-repeat: no-repeat;
 }
 
+.QrGenerator {
+    background-image: url("qrGenerator.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 
+}
 
 .Footer {
     width: 100%;
@@ -194,7 +220,7 @@ a {
 
 .div_containerForms {
     display: grid;
-    grid-template-columns: 80px 1fr 1fr 80px;
+    grid-template-columns: 80px 500px 1fr 80px;
     grid-template-rows: repeat(4, 1fr);
     height: 100%;
     justify-content: center;
@@ -206,6 +232,7 @@ a {
     grid-column: 2/3;
     grid-row: 2/4;
     padding: 10px;
+    width: 100%;
 }
 
 .imagens {
@@ -217,11 +244,13 @@ a {
     grid-column: 3/4;
     grid-row: 2/4;
     padding: 10px;
+    height: 306.9PX;
+    width: 100%;
 
 }
 
 .inputInfo {
-    width: 100%;
+    width: 97%;
     border-radius: 5px;
 }
 
@@ -233,7 +262,8 @@ input {
 
 .textTarea {
     border-radius: 5px;
-    width: 100%;
+    width: 97%;
+    height: 50%;
     min-width: 1fr;
     max-width: 1fr;
     min-height: 1fr;
@@ -254,11 +284,34 @@ textarea::placeholder {
 }
 
 .btnSend {
-    padding: 5px;
-    font-size: 16px;
-    width: 150px;
-    border-radius: 5px;
-    color: rgb(0, 0, 0);
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    width: 120px;
+
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2) 30%,
+            rgba(0, 0, 0, 0));
+    box-shadow:
+        inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.btnSend:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.btnSend:active {
+    box-shadow:
+        inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+        inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 .form_containerBtn {
@@ -267,10 +320,23 @@ textarea::placeholder {
     align-content: center;
 }
 
-@media only screen and (max-width: 600px) {
+.tel {
+    color: rgb(21, 0, 255);
+}
+
+.correo {
+    color: rgb(237, 214, 36);
+}
+
+.gps {
+    color: #ff0000;
+}
+
+
+@media only screen and (  max-width: 950px) and (min-width:500px) {
     body {
         width: 100%;
-        height: 470vh;
+        height: 600vh;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: 40px 1fr 1fr 1fr 1fr 1fr 780px;
@@ -278,26 +344,35 @@ textarea::placeholder {
         background-image: url("backgroundBlue.jpg");
         background-size: cover;
         justify-items: center;
-        }
-    section{
+        font-size: 13px;
+    }
+
+    section {
         align-self: center;
         justify-self: center;
         width: 400px;
     }
+
     h1 {
         font-family: 'Roboto Mono', monospace;
         color: #af63ff;
         text-align: center;
     }
-    h4{
-        color: #ffffff;
+
+    h4 {
+        color: #af63ff;
+        text-align: center;
+
     }
+
     p {
         font-family: 'Chakra Petch', sans-serif;
         color: rgb(255, 255, 255);
-        font-size: 30px;
+        font-size: 20px;
+        text-align: left;
+
     }
-    
+
     .Header {
         background-color: rgb(0, 0, 0);
         grid-row: 1/2;
@@ -307,31 +382,33 @@ textarea::placeholder {
         z-index: 99;
         width: 100%;
     }
-    
+
     .HeaderButtons {
         display: grid;
-        grid-template-columns: 1fr 160px;
+        grid-template-columns: 1fr 120px;
         margin: 10px 10px;
-        
+
     }
-    .divLinks{
+
+    .divLinks {
         place-items: start;
         grid-column: 1/2;
-    
+
     }
-    .divaLogos{
+
+    .divaLogos {
         grid-column: 2/3;
         align-items: center;
         justify-items: center;
     }
-    
+
     a {
         padding-left: 15px;
         text-decoration: none;
         color: rgb(255, 255, 255);
         display: inline-block;
     }
-    
+
     .Main {
         background: none;
         grid-row: 2/7;
@@ -341,111 +418,132 @@ textarea::placeholder {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 1fr);
         place-items: center;
-    
+
     }
-    .Proy{
+
+    .tel {
+        color: rgb(21, 0, 255);
+    }
+
+    .correo {
+        color: rgb(237, 214, 36);
+    }
+
+    .gps {
+        color: #ff0000;
+    }
+
+    .Proy {
         text-align: center;
     }
-    .photo{
+
+    .photo {
         width: 150px;
         height: 150px;
         background-image: url("foto.png");
         background-size: cover;
     }
+
     .Samples {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 35px 580px 580px 580px 580px ;
-    
-    
+        grid-template-rows: 90px 750px 750px 750px 750px;
+
+
     }
-    
-    .divSamples{
-        height: 580px;
+
+    .divSamples {
+        height: 600px;
         font-size: 30px;
         display: grid;
+        grid-template-columns: 354px;
+        grid-template-rows: 1fr 180px;
         place-items: center;
-    
+
     }
-    
-    .linklogos{
+
+    .linklogos {
         display: grid;
         place-content: end;
         margin: 10px 10px;
         padding: 15px;
-    
+
     }
-    
-    .tecnologies{
+
+    .tecnologies {
         display: grid;
         place-items: center;
         grid-column: 1/2;
         grid-row: 3/4;
-    
+
     }
-    
-    .tecnoLogos{
+
+    .tecnoLogos {
         margin: 20px;
         padding: 25px;
-        
+
     }
-    
-    .tecnoLogos:hover{
-        transform: scale(2.5);
+
+    .tecnoLogos:hover {
+        transform: scale(2.2);
         cursor: pointer;
         transition: 1s;
-    
+
     }
-    .biography{
+
+    .biography {
         height: 700px;
         display: grid;
         place-items: center;
         grid-row: 1/2;
         grid-column: 1/2;
     }
-    
-    
-    
+
     .divSample {
-        width: 250px;
-        height: 120px;
+        width: 350px;
+        height: 170px;
         border: 5px solid black;
         border-radius: 10px;
     }
-    
+
     .divSample:hover {
         transform: scale(0.9);
         cursor: pointer;
         transition: 1s;
-    
+
     }
-    
+
     .steelCalculator {
         background-image: url("steelCalc.png");
         background-size: cover;
         background-repeat: no-repeat;
     }
-    
+
     .medicalForm {
         background-image: url("recetaMed.png");
         background-size: cover;
         background-repeat: no-repeat;
     }
-    
+
     .subscription {
         background-image: url("Subscription.png");
         background-size: cover;
         background-repeat: no-repeat;
     }
-    
+
     .loginForm {
         background-image: url("login.png");
         background-size: cover;
         background-repeat: no-repeat;
     }
-    
-    
-    
+
+    .QrGenerator {
+        background-image: url("qrGenerator.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+
     .Footer {
         width: 100%;
         background: none;
@@ -456,11 +554,11 @@ textarea::placeholder {
         align-items: center;
         border-top: 5px solid rgb(255, 255, 255);
     }
-    
+
     .div_containerFormsResponsive {
         display: none;
     }
-    
+
     .div_containerForms {
         display: grid;
         grid-template-columns: 40px 1fr 1fr 40px;
@@ -470,37 +568,38 @@ textarea::placeholder {
         align-items: center;
         flex-direction: column
     }
-    
-    .div_contactUs {
-        grid-column: 2/3;
-        grid-row: 2/4;
-        padding: 10px;
-    }
-    
+
     .imagens {
         color: rgb(255, 255, 255);
         padding-top: 10px;
     }
-    
+
+        .div_contactUs {
+        grid-column: 2/3;
+        grid-row: 2/4;
+        padding: 10px;
+    }
+
     .form_container {
         grid-column: 3/4;
         grid-row: 2/4;
         padding: 10px;
-    
+        width: 80%;
+
     }
-    
+
     .inputInfo {
         width: 100%;
         border-radius: 5px;
     }
-    
+
     input {
         background: transparent;
         padding: 10px;
         color: #ffffff;
 
     }
-    
+
     .textTarea {
         border-radius: 5px;
         width: 100%;
@@ -513,27 +612,410 @@ textarea::placeholder {
         padding: 10px;
         color: #ffffff;
     }
-    
+
     input::placeholder {
         color: rgb(255, 255, 255);
     }
-    
+
     textarea::placeholder {
         color: rgb(255, 255, 255);
     }
-    
+
     .btnSend {
-        padding: 5px;
-        font-size: 16px;
-        width: 150px;
-        border-radius: 5px;
-        color: rgb(0, 0, 0);
+        grid-column: 3/4;
+        grid-row: 2/4;
+
+        border: 0;
+        line-height: 2.5;
+        width: 120px;
+        padding: 0 20px;
+        font-size: 1rem;
+        text-align: center;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+        border-radius: 10px;
+        background-color: rgba(220, 0, 0, 1);
+        background-image: linear-gradient(to top left,
+                rgba(0, 0, 0, 0.2),
+                rgba(0, 0, 0, 0.2) 30%,
+                rgba(0, 0, 0, 0));
+        box-shadow:
+            inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+            inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     }
     
+    .btnSend:hover {
+        background-color: rgba(255, 0, 0, 1);
+    }
+    
+    .btnSend:active {
+        box-shadow:
+            inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+            inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    }
+
     .form_containerBtn {
         display: flex;
         justify-content: center;
         align-content: center;
+        width: 106%;
+    }
+
+    .tel {
+        color: rgb(21, 0, 255);
     }
     
+    .correo {
+        color: rgb(237, 214, 36);
     }
+    
+    .gps {
+        color: #ff0000;
+    }
+    
+}
+
+
+@media only screen and (max-width: 500px) {
+    body {
+        height: 870vh;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 40px 1fr 1fr 1fr 1fr 1fr 550px;
+        color: rgb(255, 255, 255);
+        background-image: url("backgroundBlue.jpg");
+        background-size: cover;
+        justify-items: center;
+        font-size: 10px;
+    }
+
+    section {
+        align-self: center;
+        justify-self: center;
+        width: 270px;
+    }
+
+    h1 {
+        font-family: 'Roboto Mono', monospace;
+        color: #af63ff;
+        text-align: center;
+    }
+
+    h4 {
+        color: #af63ff;
+        text-align: center;
+
+    }
+
+    p {
+        font-family: 'Chakra Petch', sans-serif;
+        color: rgb(255, 255, 255);
+        font-size: 12px;
+        text-align: center;
+
+    }
+
+    .Header {
+        background-color: rgb(0, 0, 0);
+        grid-row: 1/2;
+        grid-column: 1/6;
+        position: sticky;
+        top: 0%;
+        z-index: 2000;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .HeaderButtons {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 100px;
+        margin: 0;
+    }
+
+    .divLinks {
+        place-items: start;
+        grid-column: 1/2;
+
+    }
+
+    .divaLogos {
+        grid-column: 2/3;
+        align-items: center;
+        justify-items: center;
+    }
+
+    a {
+        padding-left: 15px;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        display: inline-block;
+    }
+
+    .Main {
+        background: none;
+        grid-row: 2/7;
+        grid-column: 1/6;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        place-items: center;
+
+    }
+
+    .tel {
+        color: rgb(21, 0, 255);
+    }
+
+    .correo {
+        color: rgb(237, 214, 36);
+    }
+
+    .gps {
+        color: #ff0000;
+    }
+
+    .Proy {
+        text-align: center;
+    }
+
+    .photo {
+        width: 150px;
+        height: 150px;
+        background-image: url("foto.png");
+        background-size: cover;
+    }
+
+    .Samples {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 90px 750px 750px 750px 750px;
+
+
+    }
+
+    .divSamples {
+        height: 630px;
+        font-size: 30px;
+        display: grid;
+        grid-template-columns: 220px;
+        grid-template-rows: 1fr 180px;
+        place-items: center;
+
+    }
+
+    .linklogos {
+        display: grid;
+        place-content: end;
+        margin: 10px 10px;
+        padding: 15px;
+
+    }
+
+    .tecnologies {
+        display: grid;
+        place-items: center;
+        grid-column: 1/2;
+        grid-row: 3/4;
+
+    }
+
+    .tecnoLogos {
+        margin: 10px;
+        padding: 15px;
+
+    }
+
+    .tecnoLogos:hover {
+        transform: scale(1.4);
+        cursor: pointer;
+        transition: 1s;
+
+    }
+
+    .biography {
+        height: 700px;
+        display: grid;
+        place-items: center;
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+
+
+    .divSample {
+        width: 225px;
+        height: 110px;
+        border: 5px solid black;
+        border-radius: 10px;
+    }
+
+    .divSample:hover {
+        transform: scale(0.9);
+        cursor: pointer;
+        transition: 1s;
+
+    }
+
+    .steelCalculator {
+        background-image: url("steelCalc.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .medicalForm {
+        background-image: url("recetaMed.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .subscription {
+        background-image: url("Subscription.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .loginForm {
+        background-image: url("login.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .QrGenerator {
+        background-image: url("qrGenerator.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+
+
+    .Footer {
+        width: 100%;
+        background: none;
+        grid-row: 7/8;
+        grid-column: 1/6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 5px solid rgb(255, 255, 255);
+    }
+
+    .div_containerFormsResponsive {
+        display: none;
+    }
+
+    .div_containerForms {
+        display: grid;
+        grid-template-columns: 40px 1fr 1fr 40px;
+        grid-template-rows: repeat(4, 1fr);
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column
+    }
+
+
+    .imagens {
+        color: rgb(255, 255, 255);
+        padding-top: 10px;
+    }
+
+    .div_contactUs {
+        grid-column: 2/3;
+        grid-row: 2/4;
+        padding: 10px;
+    }
+
+    .form_container {
+        grid-column: 3/4;
+        grid-row: 2/4;
+        padding: 10px;
+        width: 120px;
+
+    }
+    .form_containerBtn {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 142px;
+    }
+
+
+    .inputInfo {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    input {
+        background: transparent;
+        padding: 10px;
+        color: #ffffff;
+
+    }
+
+    .textTarea {
+        border-radius: 5px;
+        width: 100%;
+        min-width: 1fr;
+        max-width: 1fr;
+        min-height: 1fr;
+        max-height: 1fr;
+        resize: none;
+        background: transparent;
+        padding: 10px;
+        color: #ffffff;
+    }
+
+    input::placeholder {
+        color: rgb(255, 255, 255);
+    }
+
+    textarea::placeholder {
+        color: rgb(255, 255, 255);
+    }
+
+    .btnSend {
+        grid-column: 3/4;
+        grid-row: 2/4;
+        border: 0;
+        line-height: 2.5;
+        width: 80px;
+        padding: 0 20px;
+        font-size: .8rem;
+        text-align: center;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+        border-radius: 10px;
+        background-color: rgba(220, 0, 0, 1);
+        background-image: linear-gradient(to top left,
+                rgba(0, 0, 0, 0.2),
+                rgba(0, 0, 0, 0.2) 30%,
+                rgba(0, 0, 0, 0));
+        box-shadow:
+            inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+            inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    }
+    
+    .btnSend:hover {
+        background-color: rgba(255, 0, 0, 1);
+    }
+    
+    .btnSend:active {
+        box-shadow:
+            inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+            inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    }
+    .tel {
+        color: rgb(21, 0, 255);
+    }
+    
+    .correo {
+        color: rgb(237, 214, 36);
+    }
+    
+    .gps {
+        color: #ff0000;
+    }
+    
+}
