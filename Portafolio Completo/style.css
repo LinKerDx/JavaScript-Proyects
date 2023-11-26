@@ -1,12 +1,10 @@
 body {
     width: 100%;
-    height: 550vh;
+    height: 520vh;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 40px 1fr 1fr 1fr 1fr 1fr 780px;
+    grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr 530px;
     color: rgb(255, 255, 255);
-    background-image: url("backgroundBlue.jpg");
-    background-size: cover;
     justify-items: center;
 }
 
@@ -16,18 +14,15 @@ section {
     width: 900px;
 }
 
-h1 {
+h1, h4{
     font-family: 'Roboto Mono', monospace;
     color: #af63ff;
 }
 
-h4 {
-    color: #af63ff;
-}
 
 p {
     font-family: 'Chakra Petch', sans-serif;
-    color: rgb(255, 255, 255);
+    color: rgb(124, 146, 255);
     font-size: 30px;
     text-align: left;
 }
@@ -43,10 +38,10 @@ p {
 }
 
 .HeaderButtons {
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 160px;
-
-    margin: 10px 10px;
+    place-content: center;
 
 }
 
@@ -70,6 +65,7 @@ a {
 }
 
 .Main {
+    width: 100%;
     background: none;
     grid-row: 2/7;
     grid-column: 1/6;
@@ -78,6 +74,9 @@ a {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
     place-items: center;
+    background-image: url("backgroundBlue.jpg");
+    background-size:contain ;
+    
 
 }
 
@@ -96,8 +95,6 @@ a {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 110px 650px 650px 650px 650px;
-
-
 }
 
 .divSamples {
@@ -107,8 +104,9 @@ a {
     grid-template-columns: 250px 1fr;
     grid-template-rows: 450px;
     place-items: center;
-    border: #ffffff solid 7px;
     padding: 21px;
+    border-top: 10px solid rgb(234, 234, 234);
+
 }
 
 .css{
@@ -211,7 +209,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 5px solid rgb(255, 255, 255);
+    border-top: 5px solid rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(4,68,193,1) 41%, rgba(0,212,255,1) 95%);
 }
 
 .div_containerFormsResponsive {
@@ -336,13 +335,11 @@ textarea::placeholder {
 @media only screen and (  max-width: 950px) and (min-width:500px) {
     body {
         width: 100%;
-        height: 600vh;
+        height: 550vh;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: 40px 1fr 1fr 1fr 1fr 1fr 780px;
+        grid-template-rows: 40px 1fr 1fr 1fr 1fr 1fr 590px;
         color: rgb(255, 255, 255);
-        background-image: url("backgroundBlue.jpg");
-        background-size: cover;
         justify-items: center;
         font-size: 13px;
     }
@@ -353,24 +350,17 @@ textarea::placeholder {
         width: 400px;
     }
 
-    h1 {
+    h1, h4{
         font-family: 'Roboto Mono', monospace;
         color: #af63ff;
         text-align: center;
     }
 
-    h4 {
-        color: #af63ff;
-        text-align: center;
-
-    }
-
     p {
         font-family: 'Chakra Petch', sans-serif;
-        color: rgb(255, 255, 255);
+        color: rgb(124, 146, 255);
         font-size: 20px;
         text-align: left;
-
     }
 
     .Header {
@@ -386,8 +376,7 @@ textarea::placeholder {
     .HeaderButtons {
         display: grid;
         grid-template-columns: 1fr 120px;
-        margin: 10px 10px;
-
+        place-content: center;
     }
 
     .divLinks {
@@ -418,7 +407,8 @@ textarea::placeholder {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 1fr);
         place-items: center;
-
+        background-image: url("backgroundBlue.jpg");
+        background-size:contain ;
     }
 
     .tel {
@@ -552,7 +542,8 @@ textarea::placeholder {
         display: flex;
         justify-content: center;
         align-items: center;
-        border-top: 5px solid rgb(255, 255, 255);
+        border-top: 5px solid rgb(0, 0, 0);
+        background: linear-gradient(90deg, rgba(4,68,193,1) 41%, rgba(0,212,255,1) 95%);
     }
 
     .div_containerFormsResponsive {
@@ -678,15 +669,13 @@ textarea::placeholder {
 
 @media only screen and (max-width: 500px) {
     body {
-        height: 870vh;
+        height: 550vh;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: 40px 1fr 1fr 1fr 1fr 1fr 550px;
+        grid-template-rows: 35px 1fr 1fr 1fr 1fr 1fr 480px;
         color: rgb(255, 255, 255);
-        background-image: url("backgroundBlue.jpg");
-        background-size: cover;
-        justify-items: center;
-        font-size: 10px;
+        place-content: center;
+        font-size: 11px;
     }
 
     section {
@@ -695,23 +684,18 @@ textarea::placeholder {
         width: 270px;
     }
 
-    h1 {
+    h1, h4{
         font-family: 'Roboto Mono', monospace;
         color: #af63ff;
+        margin: 2px 0 2px 0;
         text-align: center;
-    }
-
-    h4 {
-        color: #af63ff;
-        text-align: center;
-
     }
 
     p {
         font-family: 'Chakra Petch', sans-serif;
-        color: rgb(255, 255, 255);
-        font-size: 12px;
-        text-align: center;
+        color: rgb(124, 146, 255);
+        font-size: 15px;
+        text-align: left;
 
     }
 
@@ -723,7 +707,6 @@ textarea::placeholder {
         top: 0%;
         z-index: 2000;
         width: 100%;
-        padding: 10px;
     }
 
     .HeaderButtons {
@@ -761,7 +744,8 @@ textarea::placeholder {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 1fr);
         place-items: center;
-
+        background-image: url("backgroundBlue.jpg");
+        background-size: contain;
     }
 
     .tel {
@@ -790,14 +774,11 @@ textarea::placeholder {
     .Samples {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 90px 750px 750px 750px 750px;
-
-
+        grid-template-rows: 120px 550px 550px 550px 550px;
     }
 
     .divSamples {
-        height: 630px;
-        font-size: 30px;
+        height: 400px;
         display: grid;
         grid-template-columns: 220px;
         grid-template-rows: 1fr 180px;
@@ -842,13 +823,9 @@ textarea::placeholder {
         grid-column: 1/2;
     }
 
-
-
     .divSample {
-        width: 225px;
-        height: 110px;
-        border: 5px solid black;
-        border-radius: 10px;
+        width: 205px;
+        height: 90px;
     }
 
     .divSample:hover {
@@ -899,6 +876,8 @@ textarea::placeholder {
         justify-content: center;
         align-items: center;
         border-top: 5px solid rgb(255, 255, 255);
+        background: linear-gradient(90deg, rgba(4,68,193,1) 41%, rgba(0,212,255,1) 95%);
+
     }
 
     .div_containerFormsResponsive {
@@ -934,14 +913,13 @@ textarea::placeholder {
         width: 120px;
 
     }
+
     .form_containerBtn {
         display: flex;
         justify-content: center;
         align-content: center;
         width: 142px;
     }
-
-
     .inputInfo {
         width: 100%;
         border-radius: 5px;
