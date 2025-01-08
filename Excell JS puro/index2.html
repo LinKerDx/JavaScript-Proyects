@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        *,*::before,*::after{
+            box-sizing: border-box;
+        }
+
+        img{
+            max-width: 20px;
+            height: auto;
+        }
+
+        table{
+            border-collapse: collapse;
+        }
+
+        thead, tr td:first-child{
+            background: #eee;
+        }
+
+        
+
+        th, td{
+            border : 1px solid #ccc;
+            font-weight: normal;
+            font-size: 12px;
+            text-align: center;
+            width: 64px;
+            height: 20px;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        span,input{
+            position: absolute;
+            inset: 0;
+            vertical-align: middle;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input{
+            border: 0;
+            opacity: 0;
+            height: 100%;
+            pointer-events: none;
+            border-radius: 2px;
+
+            &:focus{
+                opacity: 1;
+                outline: 2px solid #000;
+            }
+        }
+
+        .selected{
+            background-color: rgba(174, 223, 255);
+        }
+
+        td.selected{
+            background-color: rgba(146, 211, 255) !important;
+
+        }
+        th.selected{
+            background-color: rgba(146, 211, 255);
+        }
+
+    </style>
+    <script type="module">
+        const $ = (el) => document.querySelector(el);
+        const $$ = (el) => document.querySelectorAll(el);
+
+        const $table = $("table");
+        const $head = $("thead");
+        const $body = $("tbody");
+        const $Add = $("div");
+        
+        
+        const FIRST_CHAR_CODE = 65;
+        const removeSelection = () => {
+            $$('.selected').forEach(el => el.classList.remove('selected'));
+            selectedColumn = null;
+            selectedRow = null;                
+        }
+        const times = length => Array.from({ length }, (_, i) => i);
+        const getColumn = i => String.fromCharCode(FIRST_CHAR_CODE + i);
+        
+        let ROWS = 13;
+        let COLUMNS = 13 ;
+        let selectedColumn = null;
+        let selectedRow = null;
+        let STATE = times(COLUMNS).map(i => times(ROWS).map(j => ({conputedValue: "", value: ""})));
+        
+        const newState = structuredClone(STATE);
+
+        function updateCell({x, y, value}){
+            const constants = generateCellsConstants(newState);
+
+            const cell = newState[x][y];
+
+            const conputedValue =conputeValue(value, constants);
+            cell.conputedValue = conputedValue
+            cell.value = value;
+
+            newState[x][y] = cell;
+
+            conputeAllCells(newState, generateCellsConstants(newState));
+
+            STATE = newState;
+
+            renderSpreadSheet();
+
+        }
+        function generateCellsConstants(cells){
+            return cells.map((rows, x)=>{
+                return rows.map((cell, y)=>{
+                    const letter = getColumn(x)
+                    const cellId = `${letter}${y + 1}`
+                    return `const ${cellId} = ${cell.conputedValue};`}).join('\n');
+            }).join('\n');
+        }
+        function conputeAllCells(cells, constants){
+            cells.forEach((rows, x)=>{
+                rows.forEach((cell, y)=>{
+                    const conputedValue = conputeValue(cell.value, constants);
+                    cell.conputedValue = conputedValue;
+                });
+            });
+
+        }
+        function conputeValue(value, constants){
+            if(typeof value === 'number') return value;
+            if(!value.startsWith("=") ) return value ;
+
+            const formula = value.slice(1);
+
+            let conputedValue
+            try{
+                conputedValue = eval(`(() => {
+                ${constants}
+                return ${formula};
+            })()`)
+                    
+            }
+            catch (e) {
+                conputedValue = `!ERROR: ${e.message}`
+            }
+            return conputedValue
+            
+        }
+        function rowRemoved(){
+            if(ROWS <= 1 ) return;
+            ROWS--
+            renderSpreadSheet();
+        }
+        function rowAdded(){
+            if(ROWS >= 13) return;
+            
+            ROWS++
+            renderSpreadSheet();
+        }
+        function columnRemoved(){
+            if(COLUMNS <= 1) return;
+            COLUMNS--
+            renderSpreadSheet();
+        }
+        function columnAdded(){
+            if(COLUMNS >= 13) return;
+
+            COLUMNS++
+            renderSpreadSheet();
+
+        }
+
+        const renderSpreadSheet = () => {
+
+            const headerHTML = `<tr>
+                <th></th>
+            ${times(COLUMNS).map(i => `<th>${getColumn(i)}</th>`).join('')}
+            </tr>
+            `
+            $head.innerHTML = headerHTML;
+
+            const bodyHTML = times(ROWS).map(row => {
+            return `<tr>
+                <td class="row-number">${row + 1}</td>
+                ${times(COLUMNS).map(column => `
+                <td data-x="${column}" data-y="${row}">
+                    <span>${newState[column][row].conputedValue}</span>
+                    <input id="inputTd" type="text" value="${newState[column][row].value}" />
+                    </td>`).join('')
+                    }
+            </tr>`;
+            }).join('');
+            
+            $body.innerHTML = bodyHTML;
+        }
+
+        $body.addEventListener('click', event => {
+
+            const td = event.target.closest('td');
+
+            if(!td) return
+
+            const {x, y} = td.dataset;
+            const input = td.querySelector('input');
+            const span = td.querySelector('span');
+            
+            if(!input) return;
+            const end = input.value.length;
+            input.setSelectionRange(0, end);
+
+            input.focus();
+            removeSelection();
+            
+            input.addEventListener('keydown',(event)=>{
+                if(event.key === 'Enter') input.blur()
+            });
+
+            input.addEventListener('blur',(event)=>{
+                if(input.value === STATE[x][y].value) return;
+
+                updateCell({x,y, value: input.value});
+            },{once: true});
+
+    }); 
+    
+        $body.addEventListener('click', event => {
+        const td = event.target.closest('.row-number');
+
+            if(!td) return
+
+            const y = [...td.innerText].join('')
+            if (y <= 0) return;
+
+            
+            selectedRow = y ;
+
+        
+            $$('.selected').forEach(el => el.classList.remove('selected'));
+            td.classList.add('selected');
+            
+            
+            $$(`tr:nth-child(${y}) td`).forEach(el => el.classList.add('selected'));
+    
+
+            }); 
+
+        $Add.addEventListener('click', event => {
+                const btn = event.target.closest('button');
+                if(!btn || btn.classList.contains('añadir') || btn.classList.contains('reducirColumna')) return;
+                if(btn.classList.contains('añadirFila')){
+                    rowAdded();
+                }
+                else{
+                    rowRemoved();
+                }
+        });
+
+
+        $Add.addEventListener('click', event => {
+                const btn = event.target.closest('button');
+                if(!btn || btn.classList.contains('añadirFila') || btn.classList.contains('reducir')) return;
+                if(btn.classList.contains('añadir')){
+                    columnAdded();
+                }
+                else{
+                    columnRemoved();
+                }
+        });
+
+
+        $head.addEventListener('click', event => {
+            const th = event.target.closest('th');
+            if(!th) return;
+
+            const x = [...th.parentNode.children].indexOf(th)
+            if (x <= 0) return;
+
+            selectedColumn = x - 1;
+
+
+            $$('.selected').forEach(el => el.classList.remove('selected'));
+            th.classList.add('selected');
+            $$(`tr td:nth-child(${x + 1})`).forEach(el => el.classList.add('selected'));
+        });
+
+
+        document.addEventListener('keydown', event => {
+            //Columnas
+            if((event.key === 'Backspace' || event.key === 'Delete') && selectedColumn !== null){
+                times(ROWS).forEach(row =>{ 
+                updateCell({x: selectedColumn, y: row, value: ''})
+            }); 
+            renderSpreadSheet();
+            }
+
+        });
+
+        document.addEventListener('keydown', event => {
+            //FILAS
+            if((event.key === 'Backspace' || event.key === 'Delete') && selectedRow !== null){
+                console.log(STATE[selectedRow])
+
+                times(COLUMNS).forEach(column =>{ 
+                updateCell({x: column, y: selectedRow - 1, value: ''})
+                
+            }); 
+            renderSpreadSheet();
+            }
+
+        });
+
+        document.addEventListener('copy', event => {
+            //FILAS
+            if (selectedColumn == null){ 
+                const rowValues = times(COLUMNS).map(column =>{
+                    return STATE[column][selectedRow - 1].conputedValue;
+                })
+
+                console.log(rowValues)
+                event.clipboardData.setData('text/plain', rowValues.join('\n'));
+                event.preventDefault();
+        };})
+            
+
+        document.addEventListener('copy', event => {
+            //COLUMNAS
+            if (selectedRow == null){ 
+                const columnValues = times(ROWS).map(row =>{
+                return STATE[selectedColumn][row].conputedValue;
+            })
+
+                event.clipboardData.setData('text/plain', columnValues.join('\n'));
+                event.preventDefault();
+        };})
+            
+        document.addEventListener('click', event => {
+            const {target} = event;
+
+            const isTdClicked = target.closest('td');
+            const isThClicked = target.closest('th');
+
+            if(!isTdClicked && !isThClicked){
+                removeSelection();
+            }
+        });
+
+        renderSpreadSheet();
+
+
+    </script>
+</head>
+<body>
+    <img
+    src="data:image/png;base64,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"
+    alt="ExcelJS"
+    width="100"
+    height="100"
+    />
+    <table>
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+    <div>
+    <p>Agregar/Quitar Fila</p>
+    <button class="añadirFila">+</button>
+    <button class="reducir">-</button>
+
+    <p>Agregar/Quitar Columna</p>
+    <button class="añadir">+</button>
+    <button class="reducirColumna">-</button>
+</body>
+</html>

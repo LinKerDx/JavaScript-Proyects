@@ -28,13 +28,13 @@ med.addEventListener("click", function medPressed() {
 
 
 subsc.addEventListener("click",  function subscPressed() {
-    let url = "https://softlinkdx.com/subscriptionPanel/index.html" 
+    let url = "https://softlinkdx.com/Subspanel/index.html" 
     window.open(url, '_blank');
 })
 
 
 login.addEventListener("click", function loginPressed() {
-    let url = "https://softlinkdx.com/loginProyect/index.html" 
+    let url = "https://softlinkdx.com/Logpro/index.html" 
     window.open(url, '_blank');
 });
 
